@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Leaflet Map of Auckland</title>
+	<meta charset="utf-8" />
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+	
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+  	
+</head>
+
+<body>
+
+<div id="mapid" style="width: 1895px; height: 945px;"></div>
+<script>
+
+	var mymap = L.map('mapid').setView([-36.848, 174.763], 14);
+
+       L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png?', {
+	     maxZoom: 18,
+		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+			'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+			'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+		id: 'mapbox.streets'
+	}).addTo(mymap);	
+	
+	
+    var popup = L.popup();
+	
+       function onMapClick(e) {
+		popup
+
+   L.marker([-36.855674,174.752569]).addTo(mymap)
+		.bindPopup("<b>Western Park</b>.").openPopup();  }
+								   
+mymap.on('click', onMapClick);
+	
+     var  WESTERN_PARK_POLYGON = { 
+         "type": "Feature",    
+           "properties": {
+             "name": "WESTERN_PARK_POLYGON"
+              },
+               "geometry": {
+               "type": "Polygon",
+               "coordinates": [
+          [
+            [
+              174.7511849703424,
+              -36.85588363206593,
+              0
+            ],
+            [
+              174.7506555446745,
+              -36.85643853633005,
+              0
+            ],
+            [
+              174.7503427441146,
+              -36.85713361599859,
+              0
+            ],
+            [
+              174.7501003297882,
+              -36.85778266871214,
+              0
+            ],
+            [
+              174.7495694432351,
+              -36.85756935606255,
+              0
+            ],
+            [
+              174.749521983434,
+              -36.85783167789823,
+              0
+            ],
+            [
+              174.7508229380028,
+              -36.85847452654164,
+              0
+            ],
+            [
+              174.7511003545857,
+              -36.85839044269952,
+              0
+            ],
+            [
+              174.7509651793022,
+              -36.85823681104606,
+              0
+            ],
+            [
+              174.7510727672641,
+              -36.85816192122815,
+              0
+            ],
+            [
+              174.751945231841,
+              -36.85785718976656,
+              0
+            ],
+            [
+              174.7521209699896,
+              -36.85796716651124,
+              0
+            ],
+            [
+              174.7525368322435,
+              -36.85781846015902,
+              0
+            ],
+            [
+              174.7527331067857,
+              -36.85773562646816,
+              0
+            ],
+            [
+              174.7526580659124,
+              -36.85757763999547,
+              0
+            ],
+            [
+              174.7527199339816,
+              -36.85751140364123,
+              0
+            ],
+            [
+              174.7526358236455,
+              -36.85730469903363,
+              0
+            ],
+            [
+              174.7525953221513,
+              -36.85707579647998,
+              0
+            ],
+            [
+              174.7525432858867,
+              -36.85679505731147,
+              0
+            ],
+            [
+              174.7525933759906,
+              -36.85647579973808,
+              0
+            ],
+            [
+              174.7527113337765,
+              -36.85631135326478,
+              0
+            ],
+            [
+              174.7530156825632,
+              -36.85637813294786,
+              0
+            ],
+            [
+              174.7532666776977,
+              -36.85632435125459,
+              0
+            ],
+            [
+              174.7533307893694,
+              -36.85603116383204,
+              0
+            ],
+            [
+              174.7533722037418,
+              -36.85573727494204,
+              0
+            ],
+            [
+              174.7535690648696,
+              -36.85542675078088,
+              0
+            ],
+            [
+              174.7536346458956,
+              -36.85509354073584,
+              0
+            ],
+            [
+              174.7537208827746,
+              -36.85487071227877,
+              0
+            ],
+            [
+              174.7535083857951,
+              -36.85480702023571,
+              0
+            ],
+            [
+              174.7530628556694,
+              -36.85463027270483,
+              0
+            ],
+            [
+              174.7511849703424,
+              -36.85588363206593,
+              0
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "WesternParkPolygon"
+      }
+    }
+L.geoJson(WESTERN_PARK_POLYGON,
+       { 
+	        color: '#ff0000',
+			fillColor: '#ff0000',
+			fillOpacity: 0.2
+			
+}).addTo(mymap);
+
+</script>
+</body>
+</html>
