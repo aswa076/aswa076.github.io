@@ -1,32 +1,43 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html><head><meta content="text/html;charset=ISO-8859-1" http-equiv="Content-Type">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css">
-<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script><title>Prelab</title></head>
+<html><head>
+<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-1">
+<link href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" rel="stylesheet">
+<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script><title>Prelab</title>
+
+</head>
 <body style="color: rgb(0, 0, 0); background-color: rgb(224, 224, 224);" alink="#000099" link="#000099" vlink="#990099">
 <br>
 <table style="width: 1018px; height: 786px; text-align: left; margin-left: auto; margin-right: auto;" border="1" cellpadding="2" cellspacing="2">
 <tbody>
 <tr>
 <td>
-<table style="text-align: left; margin-left: auto; margin-right: auto; width: 1006px; height: 3091px;" border="0" cellpadding="2" cellspacing="2">
+<table style="text-align: left; margin-left: auto; margin-right: auto; width: 1003px; height: 3534px;" border="0" cellpadding="2" cellspacing="2">
 <tbody>
 <tr>
-<td style="background-color: rgb(38, 112, 179);">
-<table style="text-align: left; width: 964px; height: 134px;" border="0" cellpadding="2" cellspacing="2">
+<td style="background-color: rgb(46, 138, 223); height: 2832px;">
+<table style="text-align: left; width: 967px; height: 134px;" border="0" cellpadding="2" cellspacing="2">
 <tbody>
 <tr>
 <td><big><big><big><span style="font-weight: bold;">GEOG 774 </span></big></big></big><small><br>
 </small><big><big><small style="font-weight: bold;"><small>2nd Sem / 2017 </small></small></big></big><small><br>
 </small><big><big><small style="font-weight: bold;"><small>University
 of
-Auckland &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+Auckland &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp;
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Arishnil Swamy <br>
 &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
@@ -73,22 +84,25 @@ showing the highlighted area of Western Park </td>
 </tbody>
 </table>
 <br>
-<table style="text-align: left; background-color: white; width: 964px; height: 2591px;" border="1" cellpadding="2" cellspacing="2">
+<table style="text-align: left; width: 972px; height: 593px;" border="1" cellpadding="2" cellspacing="2">
 <tbody>
 <tr>
-<td style="background-color: transparent;">
-<div id="mapid" style="width: 963px; height: 2599px;">&nbsp;<script>var mymap = L.map('mapid').setView([-36.848, 174.763], 14);
+<td>
+<div id="mapid" style="width: 970px; height: 562px;"></div>
+<script>
+var mymap = L.map('mapid').setView([-36.848, 174.763], 14);
 L.tileLayer('http://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png?', {
-maxZoom: 14,
+maxZoom: 20,
 attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
 '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
 'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 id: 'mapbox.streets'
-}).addTo(mymap); var popup = L.popup();
+}).addTo(mymap); L.marker([-36.855674,174.752569]).addTo(mymap)
+.bindPopup("<b>Western Park</b>.").openPopup();
+var popup = L.popup();
 function onMapClick(e) {
 popup
-L.marker([-36.855674,174.752569]).addTo(mymap)
-.bindPopup("<b>Western Park</b>.").openPopup(); }
+}
 mymap.on('click', onMapClick);
 var WESTERN_PARK_POLYGON = { "type": "Feature", "properties": {
 "name": "WESTERN_PARK_POLYGON"
@@ -264,13 +278,13 @@ L.geoJson(WESTERN_PARK_POLYGON,
 fillColor: '#ff0000',
 fillOpacity: 0.2
 }).addTo(mymap);
-</script></div>
+</script>
 </td>
 </tr>
 </tbody>
 </table>
 <br>
-<table style="text-align: left; width: 979px; height: 100px;" border="0" cellpadding="2" cellspacing="2">
+<table style="text-align: left; width: 982px; height: 111px;" border="0" cellpadding="2" cellspacing="2">
 <tbody>
 <tr>
 <td></td>
@@ -278,13 +292,162 @@ fillOpacity: 0.2
 </tbody>
 </table>
 <br>
-</td>
-</tr>
-</tbody>
-</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </td>
 </tr>
 </tbody>
 </table>
 <br>
+</td>
+</tr>
+</tbody>
+</table>
 </body></html>
