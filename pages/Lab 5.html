@@ -95,10 +95,8 @@ Earthquakes Across New Zealand </span></big></big><br>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/main.css">
 <div id="legend">
-<div id="legendText1"> <b>0<span style="white-space: pre;">                                      Magnitude </span>&nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span style="white-space: pre;"> 4+ </span> </b> </div>
+<div id="legendText1"> <b>0<span style="white-space: pre;">                                      Magnitude&nbsp;</span>&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;<span style="white-space: pre;"> 4+ </span> </b> </div>
 <div id="legendGradient" style=""></div>
 </div>
 <b>
@@ -138,7 +136,7 @@ map.data.setStyle(styleFeature); }
 function styleFeature(feature) {
 var low = [151, 83, 34]; // color of mag 1.0
 var high = [5, 69, 54]; // color of mag 6.0 and above
-var minMag = 0.1;
+var minMag = 1.0;
 var maxMag = 4.0;
 // fraction represents where the value sits between the min and max
 var fraction = (Math.min(feature.getProperty('magnitude'), maxMag) - minMag) /
@@ -180,9 +178,7 @@ return 'hsl(' + color[0] + ',' + color[1] + '%,' + color[2] + '%)';
 'elementType': 'geometry',
 'stylers': [{'visibility': 'on'}, {'hue': '#5f94ff'}, {'lightness': 60}]
 }];
-</script><span style="white-space: pre;"><span style="">Earthquake Data From:<a href="https://wfs.geonet.org.nz">GeoNet Web Feature Service</a></span><br></span></b>
-
-</td>
+</script><span style="white-space: pre;"><span style="">Earthquake Data From:<a href="https://wfs.geonet.org.nz">GeoNet Web Feature Service</a></span><br><br></span></b></td>
 </tr>
 </tbody>
 </table>
