@@ -235,7 +235,9 @@ var map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/aswa076/cj8xolsmk6nqp2roanogpl14h',
 center: [172.824,-41.618],
-zoom: 4.8
+zoom: 4.8,
+					pitch: 80, // pitch in degrees
+					bearing: 5, // bearing in degrees
 });
 map.on('load', function () {
 map.addLayer({
