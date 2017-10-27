@@ -69,15 +69,12 @@ Arishnil Swamy&nbsp;</span>&nbsp; &nbsp; &nbsp;
 <table style="text-align: left; width: 958px; height: 112px;" border="0" cellpadding="2" cellspacing="2">
 <tbody>
 <tr>
-<td>The interactive map below shows some
-significant and insignificant shipwrecks that have occured around New
-Zealand. <br>
+<td>The interactive map below shows significant and insignificant shipwrecks that have occured throughout New Zealand's history. <br>
 <br>
 The &nbsp;shipwrecks are from no specific time period and the ships
-also vary in type. <br>
+also vary in type. Explore the popups for more information that is specific for each wreck. <br>
 <br>
-Cllick on the symbols to get more imformattion about the wreck and toggle the mouse options to further
-explore the map.<br>
+Click on the symbols to get more imformation about the wreck, and toggle the mouse options to your liking for exploring the map.<br>
 <br>
 The shipwreck point data is sourced from&nbsp;<a target="_blank" href="https://koordinates.com/layer/212-nz-wreck-points-topo-150k/">Koordinates.com</a><span style="font-size: 11pt; line-height: 115%; font-family: &quot;Calibri&quot;,&quot;sans-serif&quot;;"><a target="_blank" href="https://koordinates.com/layer/212-nz-wreck-points-topo-150k/"><span style="font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;"></span></a></span><span style="font-size: 11pt; line-height: 115%; font-family: &quot;Times New Roman&quot;,&quot;serif&quot;;">
 </span> </td>
@@ -238,27 +235,7 @@ zoom: 4.8,
 					pitch: 80, // pitch in degrees
 					bearing: 5, // bearing in degrees
 });
-map.on('load', function () {
-map.addLayer({
-'id': 'maine',
-'type': 'fill',
-'source': {
-'type': 'geojson',
-'data': {
-'type': 'Feature',
-'geometry': {
-'type': 'Polygon',
-'coordinates': [[]]
-}
-}
-},
-'layout': {},
-'paint': {
-'fill-color': '#088',
-'fill-opacity': 0.8
-}
-});
-});
+
 map.on('mousemove', function (e) {
 document.getElementById('info').innerHTML =
 JSON.stringify(e.lngLat); });
@@ -473,9 +450,7 @@ map.addLayer({
 }
 },
 "layout": {
-"icon-image": "{icon}",
-"text-offset": [0, 0.6],
-"text-anchor": "top"
+"icon-image": "custom_shipwreck_points"
 }
 });
 });
@@ -487,9 +462,11 @@ new mapboxgl.Popup()
 });
 map.on('mouseenter', 'places', function () {
 map.getCanvas().style.cursor = 'pointer';
+map.setLayoutProperty ('places', 'icon-image', 'star-15');
 });
 map.on('mouseleave', 'places', function () {
 map.getCanvas().style.cursor = '';
+map.setLayoutProperty ('places', 'icon-image', 'custom_shipwreck_points');
 });
 map.on('click', function (e) {
 var features = map.queryRenderedFeatures(e.point, { layers: ['places']});
@@ -497,6 +474,7 @@ if (features.length) {
 map.flyTo({center: features[0].geometry.coordinates, zoom: 10});
 }
 });
+
 </script>
 </td>
 </tr>
